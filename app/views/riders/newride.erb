@@ -1,0 +1,11 @@
+<h2> A New Ride for <%= @rider.name %>:</h2>
+<form action="/riders/<%= @rider.id %>" method="post">
+    <select name="driver.id">
+    <% @drivers.each do |driver| %>
+    <option value="<%= driver.id %>">
+      <%= driver.name %>
+    </option>
+    <% end %>
+    </select>
+    <input type="submit" value="Add Ride" />
+</form>

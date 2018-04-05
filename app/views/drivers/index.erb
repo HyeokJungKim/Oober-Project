@@ -1,0 +1,11 @@
+<h1>Welcome to the Drivers Page</h1>
+
+<ul>
+  <% @drivers.each do |driver| %>
+    <li> <a href="/drivers/<%= driver.id %>"> Name</a>: <%= driver.name %></li>
+    <blockquote> Car: <%= driver.car %> </blockquote>
+    <br/>
+  <% end %>
+</ul>
+<br/>
+<a href="/drivers/new">Add a New Driver</a>

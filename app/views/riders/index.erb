@@ -1,0 +1,9 @@
+<h1>Welcome to the Riders Page</h1>
+
+<ul>
+  <% @riders.each do |rider| %>
+    <li> <a href="/riders/<%= rider.id %>"> Name</a>: <%= rider.name %> </li>
+    <br/>
+  <% end %>
+</ul>
+<a href="/riders/new">Add New Rider</a>

@@ -1,0 +1,18 @@
+<p>The name of this driver is: <%= @driver.name %> </p>
+<p>The VIN number of the car is: <%= @driver.car %> </p>
+
+<ul>These are the trip(s) that <%= @driver.name %> has driven:
+  <% @driver.receipts.each do |receipt| %>
+    <li>A trip with: <a href="/riders/<%= receipt.rider.id %>"><%= receipt.rider.name %></a></li>
+  <% end %>
+
+</ul>
+<br/>
+
+<a href="/drivers/<%= @driver.id %>/edit">Edit This Driver</a>
+<a href="/drivers/<%= @driver.id %>/newride">Log a New Ride</a>
+
+<form action="/drivers/<%= @driver.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete Driver" />
+</form>

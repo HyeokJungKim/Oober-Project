@@ -1,0 +1,20 @@
+<form action="/newride" method="post">
+  Driver Name: <select name="driver.id">
+    <% @drivers.each do |driver| %>
+    <option value="<%= driver.id %>">
+      <%= driver.name %>
+    </option>
+    <% end %>
+  </select>
+  <br/>
+  Rider Name: <select name="rider.id">
+    <% @riders.each do |rider| %>
+    <option value="<%= rider.id %>">
+      <%= rider.name %>
+    </option>
+    <% end %>
+  </select>
+  <br/>
+  <input type="submit" value="Add Ride" />
+
+</form>

@@ -1,0 +1,6 @@
+<form action="/drivers/<%= @driver.id %>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <input type="text" name="driver[name]" value="<%= @driver.name %>"/>
+  <input type="text" name="driver[car]" value="<%= @driver.car %>"/>
+  <input type="submit" value="Update Driver" />
+</form>

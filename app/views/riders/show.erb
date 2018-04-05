@@ -1,0 +1,15 @@
+<p>The name of this rider is: <%= @rider.name %></p>
+
+<ul>These are the trip(s) that <%= @rider.name %> has taken:
+  <% @rider.receipts.each do |receipt| %>
+    <li>A trip with: <a href="/drivers/<%= receipt.driver.id %>"><%= receipt.driver.name %></a></li>
+  <% end %>
+</ul>
+<br/>
+<a href="/riders/<%= @rider.id %>/edit">Edit This Rider</a>
+<a href="/riders/<%= @rider.id %>/newride">Add a Ride</a>
+
+<form action="/riders/<%= @rider.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete Rider" />
+</form>

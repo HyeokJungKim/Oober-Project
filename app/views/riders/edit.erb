@@ -1,0 +1,5 @@
+<form action="/riders/<%= @rider.id %>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <input type="text" name="rider[name]" value="<%= @rider.name %>"/>
+  <input type="submit" value="Update Rider" />
+</form>
